@@ -16,9 +16,6 @@ from django.urls.conf import path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -31,7 +28,7 @@ SECRET_KEY = 'django-insecure-1=zd0d^_(otiv6=k3wajcsaoxu5wz_p&^ji7)k(x)p8l(w6h5#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','sampledomain.com']
+ALLOWED_HOSTS = ['127.0.0.1','artmeow.com']
 
 
 # Application definition
@@ -65,6 +62,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'config.urls'
 
